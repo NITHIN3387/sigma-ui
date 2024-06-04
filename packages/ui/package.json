@@ -1,0 +1,63 @@
+{
+  "name": "sigma-ui",
+  "version": "0.6.0",
+  "description": "Components you can easily customize and add to your apps by copying and pasting.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./src/components/index.ts",
+    "./styles.css": "./dist/index.css"
+  },
+  "bin": "./dist/index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/styles/styles.css -o ./dist/index.css --watch && tsup --watch",
+    "build": "tsup && tailwindcss -i ./src/styles/styles.css -o ./dist/index.css",
+    "start": "node ./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NITHIN3387/SIGMA-UI.git",
+    "directory": "packages/ui"
+  },
+  "keywords": [
+    "components",
+    "ui",
+    "tailwindcss",
+    "tailwind",
+    "typescript",
+    "sigma-ui"
+  ],
+  "author": {
+    "name": "Nithin N",
+    "url": "https://www.linkedin.com/in/nithin-n-a218b3228/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NITHIN3387/SIGMA-UI/issues"
+  },
+  "homepage": "https://github.com/NITHIN3387/SIGMA-UI#readme",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/prompts": "^2.4.9",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "tsup": "^8.0.2",
+    "sigma-ui-icons": "*"
+  },
+  "dependencies": {
+    "@skarab/detect-package-manager": "^1.0.0",
+    "chalk": "^5.3.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "commander": "^12.0.0",
+    "ora": "^8.0.1",
+    "prompts": "^2.4.2",
+    "tailwind-merge": "^2.3.0"
+  }
+}

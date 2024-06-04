@@ -1,0 +1,41 @@
+{
+  "name": "sigma-ui-icons",
+  "version": "0.1.0",
+  "description": "collection of icons that will be used in the sigma-ui",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "start": "node ./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NITHIN3387/SIGMA-UI.git",
+    "directory": "packages/icons"
+  },
+  "keywords": [
+    "icons",
+    "sigma-ui-icons"
+  ],
+  "author": {
+    "name": "Nithin N",
+    "url": "https://www.linkedin.com/in/nithin-n-a218b3228/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NITHIN3387/SIGMA-UI/issues"
+  },
+  "homepage": "https://github.com/NITHIN3387/SIGMA-UI#readme",
+  "devDependencies": {
+    "tsup": "^8.0.2"
+  }
+}
