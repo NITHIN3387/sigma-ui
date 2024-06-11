@@ -4,7 +4,7 @@ import { cn } from "../../utils";
 import { cva } from "class-variance-authority";
 import clsx from "clsx";
 
-export const topNavbarConfig = cva(
+export const topNavbarTitleConfig = cva(
   clsx(
     "font-bold min-w-fit text-light-primary",
     "dark:text-dark-primary"
@@ -28,7 +28,7 @@ export const TopNavbarTitle = forwardRef<HTMLParagraphElement, TopNavbarTitlePro
     const { children, className, size, ...restProps } = props;
 
     return (
-      <h3 className={cn(topNavbarConfig({ className, size }))} ref={ref} {...restProps}>
+      <h3 className={cn(topNavbarTitleConfig({ className, size }))} ref={ref} {...restProps}>
         {children}
       </h3>
     );

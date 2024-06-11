@@ -45,7 +45,7 @@ export const Top_Navbar: Story = {
         <TopNavbarTitle>SIGMA-UI</TopNavbarTitle>
         <TopNavbarList>
           {navList.map((item) => (
-            <TopNavbarItem href={item.url}>{item.label}</TopNavbarItem>
+            <TopNavbarItem href={item.url} key={item.url}>{item.label}</TopNavbarItem>
           ))}
         </TopNavbarList>
         <TopNavbarChildren className="flex">
