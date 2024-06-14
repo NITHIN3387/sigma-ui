@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import {
   Button,
   Input,
+  ThemeToggler,
   TopNavbar,
   TopNavbarChildren,
   TopNavbarItem,
@@ -48,7 +49,7 @@ export const Top_Navbar: Story = {
             <TopNavbarItem href={item.url} key={item.url}>{item.label}</TopNavbarItem>
           ))}
         </TopNavbarList>
-        <TopNavbarChildren className="flex">
+        <TopNavbarChildren className="flex gap-5">
           <div className="flex gap-4">
             <Input
               id="search-bar"
@@ -59,6 +60,7 @@ export const Top_Navbar: Story = {
               Search
             </Button>
           </div>
+          <ThemeToggler />
         </TopNavbarChildren>
       </TopNavbar>
     );

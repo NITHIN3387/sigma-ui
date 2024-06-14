@@ -51,7 +51,6 @@ export const TopNavbar = forwardRef<HTMLElement, TopNavbarProps>(
           <NavbarToggleIcon
             className={cn(topNavbarConfig({ toggle }))}
             height={45}
-            fill="white"
             onClick={() => setIsToggle(true)}
           />
           {children}
