@@ -68,8 +68,6 @@ function isTailwindCSSInstalled() {
   const dependencies = packageJson.dependencies || {};
   const devDependencies = packageJson.devDependencies || {};
 
-  log.info(packageJson)
-
   return dependencies['tailwindcss'] || devDependencies['tailwindcss'] ? true : false;
 }
 
@@ -116,7 +114,7 @@ export const init = new Command()
       if (!isTailwindCSSInstalled()) {
         log.error("tailwindcss is not installed");
         log.info(
-          `visit ${highlight("https://tailwindcss.com/docs/guides/nextjs")} for more information`,
+          `visit ${highlight("https://tailwindcss.com/docs/guides/nextjs")} for more information ${process.cwd()}`,
         );
         process.exit(1);
       }
