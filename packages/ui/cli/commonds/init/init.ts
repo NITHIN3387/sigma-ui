@@ -114,6 +114,14 @@ export const init = new Command()
         - if not process will be terminated
       */
       if (!isTailwindCSSInstalled()) {
+        const packageJsonPath = path.resolve(process.cwd(), 'package.json');
+
+        const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+        const dependencies = packageJson.dependencies || {};
+        const devDependencies = packageJson.devDependencies || {};
+
+        log.info(packageJson, dependencies, devDependencies)
+
         log.error("tailwindcss is not installed");
         log.info(
           `visit ${highlight("https://tailwindcss.com/docs/guides/nextjs")} for more information`,
