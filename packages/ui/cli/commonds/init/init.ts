@@ -113,9 +113,9 @@ export const init = new Command()
       */
       if (!isTailwindCSSInstalled()) {
         log.error("tailwindcss is not installed");
-        log.info(
-          `visit ${highlight("https://tailwindcss.com/docs/guides/nextjs")} for more information ${process.cwd()} fuck you`,
-        );
+        // log.info(
+        //   `visit ${highlight("https://tailwindcss.com/docs/guides/nextjs")} for more information`,
+        // );
         process.exit(1);
       }
 
