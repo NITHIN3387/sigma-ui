@@ -57,6 +57,20 @@ const configPrompt = async () => {
   return config;
 };
 
+function isTailwindCSSInstalled() {
+  const packageJsonPath = path.resolve(process.cwd(), 'package.json');
+
+  if (!fs.existsSync(packageJsonPath)) {
+      return false;
+  }
+
+  const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+  const dependencies = packageJson.dependencies || {};
+  const devDependencies = packageJson.devDependencies || {};
+
+  return dependencies['tailwindcss'] || devDependencies['tailwindcss'] ? true : false;
+}
+
 export const init = new Command()
   .name("init")
   .description("initialize the sigma-ui and install dependencies")
@@ -97,7 +111,7 @@ export const init = new Command()
         checking whether tailwindcss is installed or not
         - if not process will be terminated
       */
-      if (!existsSync("./node_modules/tailwindcss")) {
+      if (!isTailwindCSSInstalled()) {
         log.error("tailwindcss is not installed");
         log.info(
           `visit ${highlight("https://tailwindcss.com/docs/guides/nextjs")} for more information`,
