@@ -68,6 +68,8 @@ function isTailwindCSSInstalled() {
   const dependencies = packageJson.dependencies || {};
   const devDependencies = packageJson.devDependencies || {};
 
+  log.info(packageJson, dependencies, devDependencies)
+
   return dependencies['tailwindcss'] || devDependencies['tailwindcss'] ? true : false;
 }
 
