@@ -17,7 +17,9 @@ const config: Config = {
     extend: {
       colors: {
         "light-primary": "rgb(var(--light-primary-color))",
-        "dark-primary": "rgb(var(--dark-primary-color))"
+        "dark-primary": "rgb(var(--dark-primary-color))",
+        "light-primary-bg": "rgb(var(--light-primary-bg-color))",
+        "dark-primary-bg": "rgb(var(--dark-primary-bg-color))",
       }
     }
   },
@@ -27,9 +29,9 @@ const config: Config = {
 export default config;`;
 
 export const GLOBALS_CSS = `
-  :root {
-    --light-primary-color: 0 0 0;
-    --light-primary-bg-color: 255 255 255;
-    --dark-primary-color: 255 255 255;
-    --dark-primary-bg-color: 0 0 0;
-  }`;
+:root {
+  --light-primary-color: 0 0 0;
+  --light-primary-bg-color: 255 255 255;
+  --dark-primary-color: 255 255 255;
+  --dark-primary-bg-color: 0 0 0;
+}`;
