@@ -4,5 +4,7 @@
 
 :root {
   --light-primary-color: 0 0 0;
+  --light-primary-bg-color: 255 255 255;
   --dark-primary-color: 255 255 255;
+  --dark-primary-bg-color: 0 0 0;
 }

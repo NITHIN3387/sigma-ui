@@ -4,4 +4,4 @@ export interface OptionsType {
   default: boolean;
 }
 
-export type ConfigType = Answers<"primaryLightColor" | "primaryDarkColor" | "dir" | "cssFile">
+export type ConfigType = Answers< "dir" | "cssFile">

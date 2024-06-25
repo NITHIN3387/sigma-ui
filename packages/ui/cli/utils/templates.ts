@@ -1,15 +1,16 @@
 import { hexToRgb } from "./hex-to-rgb";
 
 export const TAILWIND_CONFIG = (srcDirExist: boolean) =>
-`import type { Config } from "tailwindcss";
+  `import type { Config } from "tailwindcss";
 
 const config: Config = {
   darkMode: ["class"],
   content: [
-    ${!srcDirExist
-      ? `"./app/**/*.{js,ts,jsx,tsx,mdx}",
+    ${
+      !srcDirExist
+        ? `"./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",`
-      : `"./src/**/*.{js,ts,jsx,tsx,mdx}",`
+        : `"./src/**/*.{js,ts,jsx,tsx,mdx}",`
     }
   ],
   theme: {
@@ -25,8 +26,10 @@ const config: Config = {
 
 export default config;`;
 
-export const GLOBALS_CSS = (lightThemeColor: string, darkThemeColor: string) =>
-`:root {
-  --light-primary-color: ${hexToRgb(lightThemeColor)};
-  --dark-primary-color: ${hexToRgb(darkThemeColor)};
-}`
+export const GLOBALS_CSS = `
+  :root {
+    --light-primary-color: 0 0 0;
+    --light-primary-bg-color: 255 255 255;
+    --dark-primary-color: 255 255 255;
+    --dark-primary-bg-color: 0 0 0;
+  }`;

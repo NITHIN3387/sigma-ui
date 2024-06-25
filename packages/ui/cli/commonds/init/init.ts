@@ -40,18 +40,6 @@ const configPrompt = async () => {
       message: `enter the ${highlight("global css file path")} ${dim(`(default: ${workingDirectory}/app/globals.css):`)}`,
       initial: "",
     },
-    {
-      type: "text",
-      name: "primaryLightColor",
-      message: `enter the ${highlight("primary light theme")} color: ${dim("(default: black)")}\n ↳ ${warning("Note: please enter the color in hexa code only")}`,
-      initial: "",
-    },
-    {
-      type: "text",
-      name: "primaryDarkColor",
-      message: `enter the ${highlight("primary dark theme")} color ${dim("(default: white)")}\n ↳ ${warning("Note: please enter the color in hexa code only")}`,
-      initial: "",
-    },
   ]);
 
   return config;
@@ -81,8 +69,6 @@ export const init = new Command()
 
       // default config of the sigma-ui
       const defaultConfig: ConfigType = {
-        primaryLightColor: "#000000",
-        primaryDarkColor: "#FFFFFF",
         dir: existsSync("src")
           ? path.resolve(process.cwd(), "./src")
           : process.cwd(),
@@ -152,7 +138,7 @@ export const init = new Command()
         const modifiedStyles =
           currentStyles +
           "\n" +
-          GLOBALS_CSS(config.primaryLightColor, config.primaryDarkColor);
+          GLOBALS_CSS;
 
         fs.writeFileSync(config.cssFile, modifiedStyles);
         spinner.succeed();

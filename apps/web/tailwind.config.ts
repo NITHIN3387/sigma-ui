@@ -1,11 +1,19 @@
-// tailwind config is required for editor support
-
 import type { Config } from "tailwindcss";
-import sharedConfig from "@repo/tailwind-config";
 
-const config: Pick<Config, "content" | "presets"> = {
-  content: ["./src/app/**/*.tsx"],
-  presets: [sharedConfig],
+const config: Config = {
+  darkMode: ["class"],
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        "light-primary": "rgb(var(--light-primary-color))",
+        "dark-primary": "rgb(var(--dark-primary-color))"
+      }
+    }
+  },
+  plugins: [],
 };
 
 export default config;
