@@ -1,3 +1,5 @@
+"use client"
+
 import { forwardRef } from "react";
 import type { ErrorMessagesType, FormErrorMessageProps } from "./form.types";
 import { cn } from "../../utils";
