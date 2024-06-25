@@ -37,10 +37,12 @@ export const TopNavbar = forwardRef<HTMLElement, TopNavbarProps>(
     const [isToggle, setIsToggle] = useState<boolean>(false);
 
     const defaultClassname = clsx(
+      "bg-light-primary-bg",
       "md:px-8 md:py-4 md:gap-10",
       "sm:px-6 sm:py-3 sm:gap-3",
       "flex items-center p-3 gap-2 border-b border-b-gray-300",
       "dark:border-b-gray-900",
+      "dark:bg-dark-primary-bg"
     );
 
     return (
